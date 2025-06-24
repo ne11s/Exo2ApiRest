@@ -16,4 +16,5 @@ public class RealisateurResponseDto {
     private String first_name;
     private String last_name;
     private LocalDate birthDate;
+    private String nationality;
 }

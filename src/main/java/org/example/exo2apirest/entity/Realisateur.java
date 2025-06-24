@@ -24,7 +24,7 @@ public class Realisateur {
     private String first_name;
     private String last_name;
     private LocalDate birthDate;
-
+    private String nationality;
 
 
     public RealisateurResponseDto entityToDto (){
@@ -33,6 +33,7 @@ public class Realisateur {
                 .first_name(getFirst_name())
                 .last_name(getLast_name())
                 .birthDate(getBirthDate())
+                .nationality(getNationality())
                 .build();
     }
 }

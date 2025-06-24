@@ -19,8 +19,8 @@ public class RealisateurService {
         this.realisateurRepository = realisateurRepository;
     }
 
-    public RealisateurResponseDto create (RealisateurReceiveDto RealisateurReceiveDto){
-        return realisateurRepository.save(RealisateurReceiveDto.dtoToEntity()).entityToDto();
+    public RealisateurResponseDto create (RealisateurReceiveDto realisateurReceiveDto){
+        return realisateurRepository.save(realisateurReceiveDto.dtoToEntity()).entityToDto();
     }
 
     public RealisateurResponseDto get(long id){
@@ -34,9 +34,10 @@ public class RealisateurService {
     public RealisateurResponseDto update(long id,RealisateurReceiveDto realisateurReceiveDto){
         Realisateur RealisateurFound = realisateurRepository.findById(id).orElseThrow(NotFoundException::new);
         Realisateur RealisateurGet = realisateurReceiveDto.dtoToEntity();
-        RealisateurFound.setName(RealisateurGet.getName());
+        RealisateurFound.setFirst_name(RealisateurGet.getFirst_name());
+        RealisateurFound.setLast_name(RealisateurGet.getLast_name());
         RealisateurFound.setBirthDate(RealisateurGet.getBirthDate());
-        RealisateurFound.setPassword(RealisateurGet.getPassword());
+        RealisateurFound.setNationality(RealisateurGet.getNationality());
         return realisateurRepository.save(RealisateurFound).entityToDto();
     }
 
